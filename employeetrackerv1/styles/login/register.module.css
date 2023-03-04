@@ -1,0 +1,18 @@
+.formContainer {
+  padding: 300px;
+}
+
+.form {
+  display: grid;
+  justify-content: center;
+}
+
+.formFields {
+  padding-top: 20px;
+}
+
+.formBtn {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}

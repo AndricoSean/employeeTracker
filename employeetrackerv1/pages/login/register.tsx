@@ -1,4 +1,6 @@
 import { useRef } from "react";
+import Navbar from "../components/Navbar";
+import styles from "@/styles/login/register.module.css";
 
 export default function Home() {
   const emailInputRef = useRef<HTMLInputElement>(null);
@@ -22,19 +24,27 @@ export default function Home() {
   }
 
   return (
-    <div>
-      <h1>The Register Page</h1>
-      <form onSubmit={sumbitFormHandler}>
-        <div>
-          <label htmlFor="email">Email: </label>
-          <input type="email" id="email" ref={emailInputRef} />
-        </div>
-        <div>
-          <label htmlFor="password">Password: </label>
-          <input type="password" id="password" ref={passwordInputRef} />
-        </div>
-        <button>Register</button>
-      </form>
-    </div>
+    <>
+      <Navbar />
+      <div className={styles.formContainer}>
+        <form onSubmit={sumbitFormHandler} className={styles.form}>
+          <div className={styles.formFields}>
+            <div>
+              <label htmlFor="email">Email: </label>
+            </div>
+            <input type="email" id="email" ref={emailInputRef} />
+          </div>
+          <div className={styles.formFields}>
+            <div>
+              <label htmlFor="password">Password: </label>
+            </div>
+            <input type="password" id="password" ref={passwordInputRef} />
+          </div>
+          <div className={styles.formBtn}>
+            <button>Register</button>
+          </div>
+        </form>
+      </div>
+    </>
   );
 }
