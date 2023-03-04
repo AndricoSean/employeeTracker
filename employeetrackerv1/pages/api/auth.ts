@@ -31,7 +31,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     //check db if email exist
     //TODO: setup db
 
-    res.status(200).send(body);
+    return res.status(200).send(body);
   }
 }
 
