@@ -6,7 +6,7 @@ module.exports = {
     const payload = {
       iss: "employeetracker.net",
     };
-    const secret = process.env.access_token_secret;
+    const secret = process.env.ACCESS_TOKEN_SECRET;
     const options = {
       expiresIn: "2h",
       audience: userId,
@@ -36,7 +36,7 @@ module.exports = {
     // TODO: change type any
     JWT.verify(
       token,
-      process.env.access_token_secret,
+      process.env.ACCESS_TOKEN_SECRET,
       (err: any, payload: any) => {
         if (err) {
           return res.status(401).send({
@@ -45,7 +45,6 @@ module.exports = {
           });
         }
         req.payload = payload;
-        //next();
       }
     );
   },
